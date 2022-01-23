@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 function TripItem({ trip }) {
   return (
@@ -8,12 +9,15 @@ function TripItem({ trip }) {
         data-bs-toggle="modal"
         data-bs-target="#portfolioModal1"
       >
-        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-          <div class="portfolio-item-caption-content text-center text-white">
-            <i class="fas fa-plus fa-3x"></i>
+        <Link to={`/trips/${trip.slug}`}>
+          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
           </div>
-        </div>
-        <img class="img-fluid" src={trip.img} alt="..." />
+
+          <img class="img-fluid" src={trip.img} alt="..." />
+        </Link>
       </div>
     </div>
   );
